@@ -26,7 +26,7 @@ namespace Bank
 
         public void Auszahlen(int betrag)
         {
-            if (guthaben <= betrag)
+            if (guthaben >= betrag)
             {
                 guthaben -= betrag;
             }
