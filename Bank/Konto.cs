@@ -4,7 +4,6 @@ namespace Bank
 {
     internal class Konto
     {
-
         private int guthaben;
 
         public int Guthaben
@@ -17,7 +16,13 @@ namespace Bank
 
         public Konto(int guthaben)
         {
+            if (guthaben < 0)
+            {
+                throw new ArgumentOutOfRangeException("Guthaben darf nicht negativ sein.");
+            }
+
             this.guthaben = guthaben;
+
         }
 
         public void Einzahlen(int betrag)
@@ -33,7 +38,7 @@ namespace Bank
             }
             else
             {
-                throw new Exception("Guthaben nicht ausreichend");
+                throw new ArgumentOutOfRangeException("Guthaben nicht ausreichend");
             }
         }
     }
