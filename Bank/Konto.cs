@@ -2,7 +2,7 @@
 
 namespace Bank
 {
-    internal class Konto
+    public class Konto
     {
         private int guthaben;
 
